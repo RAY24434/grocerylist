@@ -24,14 +24,14 @@
   "screenshots": [
     {
       "src": "./shop-smart-desktop.png",
-      "sizes": "1280x800",
+      "sizes": "760x834",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Shop Smart on desktop"
     },
     {
       "src": "./shop-smart-mobile.png",
-      "sizes": "390x844",
+      "sizes": "670x786",
       "type": "image/png",
       "label": "Shop Smart on mobile"
     }
