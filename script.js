@@ -2017,3 +2017,16 @@ updateBudgetDisplay();
 renderReferences();
 
 renderSavedLists();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => {
+        console.log("Shop Smart service worker registered successfully.");
+      })
+      .catch((error) => {
+        console.error("Service worker registration failed:", error);
+      });
+  });
+}
