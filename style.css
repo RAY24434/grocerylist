@@ -1,0 +1,693 @@
+/* ================================
+   SHOP SMART - MAIN STYLES
+================================ */
+
+:root {
+    --primary: #3157d5;
+    --primary-dark: #2343ae;
+    --soft: #eef2ff;
+    --background: #f6f7fb;
+    --card: #ffffff;
+    --text: #1d2433;
+    --muted: #6d7483;
+    --border: #e4e7ee;
+    --danger: #d83b3b;
+    --success: #23884b;
+}
+
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ================================
+   APP CONTAINER
+================================ */
+
+.app {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.topbar {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color: white;
+    padding: 25px 20px 30px;
+    border-radius: 0 0 24px 24px;
+}
+
+.brand {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.tagline {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+main {
+    padding: 18px;
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 5px 18px rgba(31, 42, 68, 0.06);
+}
+
+.card h2 {
+    margin: 0 0 12px;
+    font-size: 19px;
+}
+
+.card h3 {
+    margin: 0 0 8px;
+}
+
+/* ================================
+   BUDGET CARD
+================================ */
+
+.budget-card {
+    margin-top: -5px;
+}
+
+.budget-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.budget-row input {
+    flex: 1;
+}
+
+.budget-display {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ================================
+   INPUTS
+================================ */
+
+input {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    background: white;
+    color: var(--text);
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--soft);
+}
+
+input::placeholder {
+    color: #9aa1af;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+
+.nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.nav button {
+    border: none;
+    background: white;
+    color: var(--muted);
+    border-radius: 10px;
+    padding: 11px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+}
+
+.nav button.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ================================
+   SCREEN CONTROL
+================================ */
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* ================================
+   FORM ROWS
+================================ */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row.three {
+    grid-template-columns: 1fr 1fr 0.7fr;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-weight: 600;
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+}
+
+.secondary-btn {
+    background: var(--soft);
+    color: var(--primary);
+}
+
+.danger-btn {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+.full-btn {
+    width: 100%;
+}
+
+/* ================================
+   GROCERY LIST
+================================ */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    margin: 0;
+}
+
+.item-count,
+.reference-count,
+.saved-list-count {
+    background: var(--soft);
+    color: var(--primary);
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ================================
+   GROCERY ITEM
+================================ */
+
+.grocery-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.grocery-item:last-child {
+    border-bottom: none;
+}
+
+.grocery-item.completed {
+    opacity: 0.55;
+}
+
+.grocery-item.completed .item-name {
+    text-decoration: line-through;
+}
+
+.item-check {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-name {
+    margin: 0;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.item-details {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.item-total {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.icon-btn {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* ================================
+   TOTAL AREA
+================================ */
+
+.total-area {
+    border-top: 2px solid var(--border);
+    margin-top: 12px;
+    padding-top: 14px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.total-label {
+    font-weight: 600;
+}
+
+.total-value {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.budget-status {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.budget-status.good {
+    color: var(--success);
+}
+
+.budget-status.over {
+    color: var(--danger);
+}
+/* =================================
+   STEP 7A. SHOPPING PROGRESS TRACKER
+================================= */
+
+.progress-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.progress-heading h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #166534;
+}
+
+#progressPercentage {
+    font-weight: bold;
+    color: #15803d;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #dcfce7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+    background: #16a34a;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+#progressMessage {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #166534;
+}
+/* =================================
+   STEP 9. GROCERY SORTING
+================================= */
+
+.grocery-sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.grocery-sort label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#grocerySort,
+#sortItems {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    max-width: 100%;
+}
+
+@media (max-width: 480px) {
+    .grocery-sort {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #sortItems {
+        width: 100%;
+    }
+}
+/* ================================
+   Grocery Categories
+================================ */
+.category-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    color:#374151;
+}
+
+/* =================================
+   STEP 11. CATEGORY FILTER
+================================= */
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.category-filter label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#categoryFilter {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .category-filter {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #categoryFilter {
+        width: 100%;
+    }
+}
+/* =================================
+   STEP 12. GROCERY SEARCH
+================================= */
+
+.grocery-search {
+    margin: 16px 0;
+}
+
+#grocerySearch {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+/* ================================
+   REFERENCE PRICES
+================================ */
+
+.reference-item {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.reference-item:last-child {
+    border-bottom: none;
+}
+
+.reference-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.reference-name {
+    font-weight: 600;
+}
+
+.reference-price {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.reference-shop {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.reference-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.reference-actions button {
+    padding: 7px 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 12px;
+}
+
+/* ================================
+   SAVED LISTS
+================================ */
+
+.saved-list-card {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 14px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.saved-list-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.saved-list-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.saved-list-total {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.saved-list-meta {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.saved-list-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.saved-list-actions button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.open-btn {
+    background: var(--soft);
+    color: var(--primary);
+}
+
+.shop-again-btn {
+    background: #eaf8ef;
+    color: var(--success);
+}
+
+.delete-btn {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+/* ================================
+   EMPTY STATES
+================================ */
+
+.empty-state {
+    text-align: center;
+    padding: 25px 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.empty-state-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 20px 15px 30px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (min-width: 700px) {
+    body {
+        padding: 25px 0;
+    }
+
+    .app {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 35px rgba(31, 42, 68, 0.12);
+    }
+}
